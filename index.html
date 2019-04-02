@@ -1,0 +1,395 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>广州云眼信息科技官网</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<style type="text/css">
+			body {background-color: #326696;margin: 0px;overflow: hidden;font-family:"Source Han Sans",Helvetica,Tahoma,Arial,"Hiragino Sans GB","Microsoft YaHei",SimSun,Heiti,sans-serif;position: relative;font-size: 16px; color:#333;}
+			canvas{position: absolute;left: 0;top: 0;z-index: -1;}
+			a {text-decoration: none;}
+			.txtcen{text-align: center;}
+			.logo{position: fixed;left: 50%;text-align: center;transform:translate(-50%,20%);-ms-transform:translate(-50%,20%);-moz-transform:translate(-50%,20%); -webkit-transform:translate(-50%,20%); -o-transform:translate(-50%,20%);}
+			.text{position: fixed;left: 0;width: 100%;text-align: center; top:18rem;}
+			.text a{display: inline-block; text-align: center;color: #ccc;margin:0 20px;font-size: 1rem;}
+			.box_textall{position: relative;width: 100%;background: #333;}
+			.box_text{position: relative; text-align: center;}
+			.box_text a{display:inline-block; height: 2.6rem;line-height: 2.6rem;text-align: center;}
+			.box_text .tab{width:20%; color: #fff;}
+			.box_textall .logo_small{display: block; height: 2.6rem;line-height: 2.6rem;width: 10rem; float: left; background:url(images/logo_small.png) center no-repeat; background-size: auto 70%; position: relative; }
+			.box_textall .logo_small a{ display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 500; }
+			.box_text .now{background: #ff6600; color:#fff;}
+			.sjicon{text-align: center; position: fixed; width: 100%; top:21rem;}
+			.sjicon a{display: inline-block; width:1.5rem; height: 1.5rem; margin: 0 .6rem; }
+			.sjicon img{width: 100%;}
+			.footer{position: fixed;bottom: 0;left: 0;color: #999;width: 100%;height:30px;text-align: center; opacity: .5;}
+			.footer a{color:#999;}
+			.cons{width: 100%; position: fixed; height: 100%; overflow-y: auto; background: rgba(255,255,255,0.5); display: none; }
+			.banner{height: 2rem; width: 100%;  position: relative;}
+			.banner_close{width: 2rem;height: 2rem; line-height: 2rem; position: absolute;right: 1rem; top:0rem; color: #fff;cursor:pointer; font-size: 1rem; background: url(images/close.png) center no-repeat; background-size: 50%;}
+			.dbcon{display: none;margin: 0 auto;width: 90%; line-height: 2; font-size: 1rem; padding-bottom: 2rem;}
+			.dbcon ul{list-style: none;padding: 1rem;}
+			.dbcon ul li{text-align: center; }
+			.dbcon h1{font-size: 1.5rem;}
+			.dbcon h2{font-size: 1.2rem;}
+			.jsicon_box{margin: 2rem 0;}
+			.js_icons span{width: 5rem; display: inline-block; margin:0 2rem; }
+			.js_icons img{ width: 100%;}
+			.clear{font-size: 0; clear: both;}
+			.ifie{width: 500px; height: 300px; line-height: 2; color:#fff; margin:0 auto;padding-top:50px; text-align:center; display: none;}
+			.ifie a{color: #fff; text-decoration: underline;}
+			.ifie2w{width: 200px; height: 200px; margin:0 auto; }
+			.ifie2w img{width: 100%;}
+			.staff{ margin: 2rem 0;}
+			.staff .left_box{ width: 50%;  text-align: right; float: left; position: relative; height: 3rem;}
+			.staff .right_box{ width: 50%;  text-align: left; float: left; position: relative; height: 3rem; }
+			.staff .left_text{ width: 50%; text-align: right; float: left; position: relative; margin: 1rem 0;}
+			.staff .right_text{ width: 50%;  text-align: left; float: left; position: relative; margin: 1rem 0;}
+			.staff .left_text ul li{text-align: right;}
+			.staff .right_text ul li{text-align: left;}
+			.staff .stbox_text{padding:0 1rem;}
+			.staff .tx{ position: absolute;  width:3rem; height: 3rem;}
+			.staff .tx img{width: 100%;}
+			.staff .sixiang{  height: 60%; position: absolute;  font-size: 1.2rem; line-height: 1; font-weight: bold; text-align: left;}
+			.staff .name{ height: 40%; position: absolute; font-size: .6rem; color: #666; text-align: left;}
+			.a{right: 1rem;top: 0; }
+			.b{right: 5rem;top: 0;}
+			.c{right: 5rem;bottom: 0;}
+			.d{left: 1rem;top: 0; }
+			.e{left: 5rem;top: 0; }
+			.f{left: 5rem;bottom: 0; }
+			.ani{
+				animation:about .8s;-moz-animation:about .8s;-webkit-animation:about .8s; -o-animation:about .8s; display: block;
+			}
+			@keyframes about
+			{
+				0%   {
+
+					background: rgba(255,255,255,0);
+				}
+				100% {
+				}
+			}
+			@media all and (max-width: 1000px) {
+				.dbcon img{width: 100%;}
+			}
+			.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+		    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word;}
+		</style>
+		<script type="text/javascript" src="js/ThreeWebGL.js"></script>
+		<script type="text/javascript" src="js/ThreeExtras.js"></script>
+		<script type="text/javascript" src="js/Detector.js"></script>
+		<script type="text/javascript" src="js/RequestAnimationFrame.js"></script>		
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	</head>
+	<script type="text/javascript">
+			(function() {
+			    if(/s=noRedirect/i.test(location.search)) return; 
+			    if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+			        try {
+			            if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+			                $('head').append('<link href="css/phone.css" rel="stylesheet" type="text/css" />')
+			            } else if(/iPad/i.test(navigator.userAgent)) {
+			                // $('head').append('<link href="xxx.css" rel="stylesheet" type="text/css" />')
+			            }
+			        } catch(e) {}
+			    }   
+			})();
+			if(navigator.platform.indexOf("Mac") > -1) document.documentElement.classList.add("ua-mac");
+		</script>
+	<body>
+	<div class="all">
+	<div style="display: none"><img src="images/cloud10.png"></div>
+	<div class="logo"><img src="images/logo.png"></div>
+	<div class="text"><a href="javascript:" class="more">了解我们</a><a href="javascript:" class="more">企业文化</a><a href="javascript:" class="more" >解决方案</a><a href="javascript:" class="tab" >联系我们</a></div>
+	<div class="sjicon"><a href="javascript:"><img src="images/wx.png"></a><a href="javascript:"><img src="images/yx.png"></a><a href="javascript:"><img src="images/qq.png"></a><a href="javascript:"><img src="images/bj.png"></a><a href="javascript:"><img src="images/wb.png"></a></div>
+	<div class="cons">
+		<div class="banner"><div class="banner_close"></div></div>
+		<div class="box_textall"><div class="logo_small"><a href="javascript:"></a></div><div class="box_text"><a href="javascript:" class="tab">了解我们</a><a href="javascript:" class="tab">企业文化</a><a href="javascript:" class="tab" >解决方案</a><a href="javascript:" class="tab" >联系我们</a></div><p class="clear"></p></div>
+		<div class="dbcon">
+			<ul>
+				<li>
+					<h2>起源</h2>
+					<p>2016年7月，一个平常的日子云眼诞生</p>
+					<p>一家由信仰不将就的人构成的公司</p>
+					<h2>开始</h2>
+					<p>我们就希望做点不一样的事情，去影响甚至改变这个将就的世界</p>
+					<p>我们选择了科技创新作为我们实践梦想的第一步</p>
+				</li>
+				<li><img src="images/map.png"></li>				
+				<li>
+					<p>我们同样信仰这个世界上有这样一群你们</p>
+					<p>热衷互联网生活、有品位、乐分享</p>
+					<p>酷爱一切精致</p>
+					<p>愿为美好喝彩</p>
+				</li>
+				<li>
+					<h2>共进</h2>
+					<p>我们非常愿意为你们</p>
+					<p>提供高品质、优设计的产品和有情谊的服务</p>
+					<p>这是一种天性使然的默契</p>
+					<p>无论你是如何发现云眼</p>
+					<p>你对云眼的期许和建议，我们都愿闻其详</p>
+				</li>			
+				<li>
+					<p>因为在这里</p>
+					<p>谱写的</p>
+					<p>是关于我们的，也是关于你们的不将就故事</p>
+					<p>从这一天开始，一切都不平常</p>
+					<p>。。。</p>
+				</li>
+			</ul>
+		</div>
+		<div class="dbcon">
+		
+			<ul>
+				<li>
+					<h2>我们愿景</h2>
+					<p>成为一个受尊重的企业</p>
+					<h2>我们使命</h2>
+					<p>让企业研发科技，让科技改变生活</p>
+					<h2>核心价值</h2>					
+					<p>不断提升、不断超越、不断分享</p>
+					<p>专注于研发、保持技术独立与纯正</p>
+					<p>研发领域中不断学习成长，创造良性成长生态链</p>
+					<h2>员工是我们最大的财富</h2>
+					<div class="staff">
+						<div class="left_box">
+							<div class="tx a"><img src="images/tx1.png"></div>				
+							<div class="sixiang b">小小的设计也有大大的梦想</div>
+							<div class="name c">李小婷 云眼信息科技第0026号员工</div>						
+						</div>
+						<div class="right_box">
+							<div class="tx d"><img src="images/tx2.png"></div>				
+							<div class="sixiang e">不会摄影的编辑不是好运营</div>
+							<div class="name f">王成威 云眼信息科技第0039号员工</div>	
+						</div>
+						<div class="left_text">
+							<ul class="stbox_text">
+								<li>每个人都有自己的生活，每个人都有自己的梦想。作为一个刚出茅庐的小小设计师。能够在一个平台施展自己的才华是再好不过的事啦。做一个好人，完成一个梦想。你就让世界美好了一点。我就准备做这样一个人。我的精彩再我的每一个设计稿中，我的成就在每次版本迭代里。梦想比创业更有意义。</li>
+							</ul>
+						</div>
+						<div class="right_text">
+							<ul class="stbox_text">
+								<li>从而立之年进入云眼信息科技这样一家创业公司，于我于我的家庭都是一次意义重大的选择。公司一次次的项目策划一次次的产品运营。每一次都给我留下无比珍贵的记忆。同事的平面沟通文化让事情更易解决。我会为自己奋斗，也为了我的家庭。公司给一个飞翔的平台。我会全力去做。我是一名运营。</li>
+							</ul>
+						</div>
+						<p class="clear"></p>
+					</div>
+					<h2>服务理念</h2>					
+					<p>专注客户利益、保护客户资产</p>
+					<p>不断提升自身水平、多为客户考虑</p>
+					<p>积极推进服务与客户实现共赢</p>
+					<p>提升效率，节省时间</p>
+					<p>尊重客户信念</p>
+					<div class="staff">
+						<div class="left_box">
+							<div class="tx a"><img src="images/tx3.png"></div>				
+							<div class="sixiang b">相信并坚持正确的选择</div>
+							<div class="name c">李毅 云眼信息科技第0016号员工</div>						
+						</div>
+						<div class="right_box">
+							<div class="tx d"><img src="images/tx4.png"></div>				
+							<div class="sixiang e">功夫只会三脚猫</div>
+							<div class="name f">丁微微 云眼信息科技第0012号员工</div>	
+						</div>
+						<div class="left_text">
+							<ul class="stbox_text">
+								<li>很高兴可以在公司发挥自己。在这里我遇到了很多志同道合的朋友。他们伴随我工作，进入我的生活。在这里我学到了自信。告诉自己要坚持自我。</li>
+							</ul>
+						</div>
+						<div class="right_text">
+							<ul class="stbox_text">
+								<li>这里没有领导，没有经理，只有同事和前辈。感谢大家无私的付出和分享。公司的核心是分享，在这里可以看到不一样的发展之路。</li>
+							</ul>
+						</div>
+						<p class="clear"></p>
+					</div>
+					<h2>员工价值</h2>					
+					<p>尊重员工个人信念</p>
+					<p>以人为本、不断完善</p>
+					<p>追求最高成就、追求最好</p>
+					<p>群策群力、共赴卓越</p>
+					<p>敢为人先</p>
+					<p>不畏艰难，勇于向前</p>
+					<p>勇于改变，不能墨守成规</p>
+				</li>			
+			</ul>
+		</div>
+		<div class="dbcon">
+			<ul>
+				<li>
+					<h2>云计算</h2>
+					<p>GetCloud 是云眼信息科技自主研发的分布式 PaaS 云计算技术。通过 GetCloud，用户不仅可以部署和运行 Web Application，也可以对其进行在线开发、在线调试。同时可根据用户需求提供云主机服务。</p>
+					<p>GetCloud 可对IT 基础设施（如：服务器、共享存储、防火墙路由器等）进行统一管控，形成资源池，并由云平台核心的智能资源调度器统一调度。</p>
+					<p>在云平台模板上，用户只需选择运行环境并提交应用部署包，即可安装、部署，应用上线时间从过去的几周缩短到几小时。</p>
+				</li>
+				<li class="jsicon_box">
+					<p class="js_icons"><span><img src="images/Database.png"></span><span><img src="images/Download.png"></span><span><img src="images/Settings.png"></span><span><img src="images/Lock.png"></span><span><img src="images/User.png"></span></p>
+					<p class="js_icons"><span>云主机</span><span>云部署</span><span>云应用</span><span>云安全</span><span>云管理</span></p>
+				</li>
+				<li>
+					<h2>行业解决方案</h2>
+					<p>多年技术开发与电子商务行业经验沉淀，集合对二十多个主流行业的深度研究，从根本出发把握您的实际需求</p>
+					<p>做到开发更快捷、更完善，营销更精准、更高效</p>
+					<p>覆盖二十余个主流行业，1000+行业解决方案深度实践，只为助您的项目更好、更快、更省心</p>
+				</li>
+				<li class="jsicon_box">
+					<p class="js_icons"><span><img src="images/Shopping.png"></span><span><img src="images/Comment.png"></span><span><img src="images/Mail3.png"></span><span><img src="images/Home.png"></span><span><img src="images/Tag.png"></span></p>
+					<p class="js_icons"><span>电子商务</span><span>移动应用</span><span>政务系统</span><span>企业门户</span><span>互联金融</span></p>
+				</li>
+				<li>
+					<h2>视频服务</h2>
+					<p>视频云平台GetVideo，是基于云计算的视频平台。在视频云端服务器实现视频批量上传、多点存储备份、多码率转码、内容分发、视频内容 管理、播放器定制、统计分析等一切操作。</p>
+					<p>视频上传、视频转码、VDN分发、视频管理、定制播放器、视频分布、视频保护、视频统计</p>
+				</li>
+				<li class="jsicon_box">
+					<p class="js_icons"><span><img src="images/Camera.png"></span><span><img src="images/Chart.png"></span><span><img src="images/Document.png"></span></p>
+					<p class="js_icons"><span>视频管理</span><span>存储统计</span><span>视频转码</span></p>
+				</li>
+				<li>
+					<p>能解决单点失效问题，所有的单点设备都可以设置热备冗余。</p>
+					<p>对于用户的数据和应用都有相当完善的保护机制。</p>
+					<p>不仅能够对平台本身和部署在平台上的应用系统进行监控和管理，也能对硬件设备进行监控和管理。</p>
+					<h2>大数据</h2>
+					<p>“大数据”是一种需要新处理模式才能具有更强决策力、洞察力和流程优化能力的海量、高增长率和多样化的信息资产。GetPower大数据平台，可以为企事业单位提供行业咨询、数据挖掘、知识发现以及可视化等多种服务。</p>
+					<p>强大的数据集成能力：内置多种工具，支持从网站，关系型数据库，NoSQL 数据库，以及实时数据库等多种数据源快速导入数据。</p>
+					<p>多样化的数据存储：包含分布式文件系统，分布式数据库，实时数据库，NoSQL数据库，满足企业不同形式数据的存储。</p>
+				</li>
+				<li class="jsicon_box">
+					<p class="js_icons"><span><img src="images/Cloud.png"></span><span><img src="images/Dashboard.png"></span><span><img src="images/Tools.png"></span><span><img src="images/Search.png"></span></p>
+					<p class="js_icons"><span>分布存储</span><span>可视建模</span><span>数据预警</span><span>页面抓取</span></p>
+				</li>
+				<li>
+					<p>易用的数据分析平台：不仅包含了实时处理，内存计算等数据计算框架，还包含了一个方便的可视化建模工具，快速构建数据挖掘的模型。</p>
+					<p>智慧的数据展现平台：不仅包含传统的报表设计工具，也包含可定制化的数据预警，决策分析平台。</p>
+					<p>高安全性：端到端权限管理，二层网络数据隔离，保障用户数据安全。</p>
+					<p>高稳定性：主备或集群结构，抵抗单点失效，多份数据备份，确保数据安全。</p>			
+				</li>
+			</ul>
+		</div>
+		<div class="dbcon">
+			<ul>
+				<li>
+					<h2>客户服务</h2>
+					<p>客户服务邮箱： kefu@cloudeye.com.cn</p>
+					<h2>媒体垂询、公关传播</h2>
+					<p>联系邮箱：meiti@cloudeye.com.cn</p>
+					<h2>国内市场合作</h2>
+					<p>市场推广及品牌合作业务咨询：shichang@cloudeye.com.cn</p>
+					<p>电子商务渠道业务咨询：qudao@cloudeye.com.cn</p>
+					<h2>产品开发合作</h2>
+					<p>第三方开发者软件的销售、结算等相关事务：xiaoshou@cloudeye.com.cn</p>
+					<p>产品与技术相关战略合作：hezuon@cloudeye.com.cn</p>
+					<h2>知识产权</h2>
+					<p>知识产权事务相关建议、举报、投诉：chanquan@cloudeye.com.cn</p>
+					<h2>加入云眼</h2>
+					<p>人才加盟、就业合作：zhaopin@cloudeye.com.cn</p>
+					<p>地址：广东省广州市天河区龙口东路34号</p>
+					<p>邮箱：sales@cloudeye.com.cn</p>
+					<div style="max-width:1000px;height:550px;border:#ccc solid 1px; margin:0 auto;" id="dituContent"></div>
+					<h2>反商业贿赂</h2>
+					<p>云眼信息科技严禁员工向业务合作伙伴索贿或收取佣金、回扣或其他私人利益。</p>
+					<p>如发现任何不廉洁或舞弊行为，请举报至：lianzheng@cloudeye.com.cn 。</p>
+					<p>云眼内控合规部门将开展独立调查并为举报人保密。</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="ifie">
+	<p>IE浏览器无法完美支持本网站,请使用<a href="https://www.baidu.com/s?wd=chrome" target="_blank">Chrome</a>或<a href="http://www.firefox.com.cn/download/" target="_blank">FireFox</a>浏览。<p/>
+	<p>或用手机扫描下方二维码<p/>
+	<p class="ifie2w"><img src="images/2wei.png"></p>
+</div>
+ 	<div class="footer">© 2017 cloudeye.com.cn <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备17053070号</a> 云眼信息科技版权所有</div>
+ 	<script type="text/javascript">
+	    //创建和初始化地图函数：
+	    function initMap(){
+	        createMap();//创建地图
+	        setMapEvent();//设置地图事件
+	        addMapControl();//向地图添加控件
+	    }
+	    
+	    //创建地图函数：
+	    function createMap(){
+	        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+	        var point = new BMap.Point(113.348222,23.142973);//定义一个中心点坐标
+	        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+	        window.map = map;//将map变量存储在全局
+	    }
+	    
+	    //地图事件设置函数：
+	    function setMapEvent(){
+	        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+	        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+	        map.enableKeyboard();//启用键盘上下左右键移动地图
+	    }
+	    
+	    //地图控件添加函数：
+	    function addMapControl(){
+	        //向地图中添加缩放控件
+		var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+		map.addControl(ctrl_nav);
+	        //向地图中添加缩略图控件
+		var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+		map.addControl(ctrl_ove);
+	        //向地图中添加比例尺控件
+		var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+		map.addControl(ctrl_sca);
+	    }
+	    initMap();//创建和初始化地图
+	</script>
+ 	<script>
+		if (!!window.ActiveXObject || "ActiveXObject" in window){
+	 		$(".all").hide();
+	 		$(".ifie").show();
+	 	}else{		
+	 		$.getScript('js/canvas.js');
+	 	}
+	</script>
+	<script id="vs" type="x-shader/x-vertex">
+		varying vec2 vUv;
+		void main() {
+			vUv = uv;
+			gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+		}
+	</script>
+	<script id="fs" type="x-shader/x-fragment">
+		uniform sampler2D map;
+		uniform vec3 fogColor;
+		uniform float fogNear;
+		uniform float fogFar;
+		varying vec2 vUv;
+		void main() {
+			float depth = gl_FragCoord.z / gl_FragCoord.w;
+			float fogFactor = smoothstep( fogNear, fogFar, depth );
+			gl_FragColor = texture2D( map, vUv );
+			gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+			gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+		}
+	</script>	
+	<script>
+		$(".text a").on('click', function() {
+			$(".cons").fadeIn();
+			$(".sjicon").fadeOut();
+			$(".logo").fadeOut();
+			$(".text").fadeOut();
+			$('.cons .dbcon').eq($(this).index()).show().siblings('.dbcon').hide();
+			$('.box_text .tab').eq($(this).index()).addClass('now').siblings('.tab').removeClass('now')
+		});
+		$(".box_text .tab").on('click', function() {
+			$('.cons .dbcon').eq($(this).index()).show().siblings('.dbcon').hide();
+			$(this).addClass('now').siblings('.tab').removeClass('now')
+		});
+		$(".banner_close,.logo_small a").on('click', function() {
+			$(".cons").fadeOut();
+			$(".logo").fadeIn()
+			$(".text").fadeIn()
+			$(".sjicon").fadeIn();
+		});		
+	</script>
+	</body>
+</html>

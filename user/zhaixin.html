@@ -1,0 +1,74 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>广州云眼信息科技官网</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+		<link href="../css/css.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="../js/ThreeWebGL.js"></script>
+		<script type="text/javascript" src="../js/ThreeExtras.js"></script>
+		<script type="text/javascript" src="../js/Detector.js"></script>
+		<script type="text/javascript" src="../js/RequestAnimationFrame.js"></script>		
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	</head>
+	<script type="text/javascript">
+			(function() {
+			    if(/s=noRedirect/i.test(location.search)) return; 
+			    if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+			        try {
+			            if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+			                $('head').append('<link href="../css/phone.css" rel="stylesheet" type="text/css" />')
+			            } else if(/iPad/i.test(navigator.userAgent)) {
+			                // $('head').append('<link href="xxx.css" rel="stylesheet" type="text/css" />')
+			            }
+			        } catch(e) {}
+			    }   
+			})();
+			if(navigator.platform.indexOf("Mac") > -1) document.documentElement.classList.add("ua-mac");
+		</script>
+	<body>
+	<div class="all">
+		<div style="display: none"><img src="../images/cloud10.png"></div>
+		<div class="user_title"></div>
+	</div>
+<div class="ifie">
+	<p>IE浏览器无法完美支持本网站,请使用<a href="https://www.baidu.com/s?wd=chrome" target="_blank">Chrome</a>或<a href="http://www.firefox.com.cn/download/" target="_blank">FireFox</a>浏览。<p/>
+	<p>或用手机扫描下方二维码<p/>
+	<p class="ifie2w"><img src="../images/2wei.png"></p>
+</div>
+ 	<div class="footer">© 2017 cloudeye.com.cn <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备17053070号</a> 云眼信息科技版权所有</div>
+	<script type="text/javascript">
+		if (!!window.ActiveXObject || "ActiveXObject" in window){
+	 		$(".all").hide();
+	 		$(".ifie").show();
+	 	}else{		
+	 		$.getScript('../js/canvas.js');
+	 	}
+	</script>
+ 	<script id="vs" type="x-shader/x-vertex">
+		varying vec2 vUv;
+		void main() {
+			vUv = uv;
+			gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+		}
+	</script>
+	<script id="fs" type="x-shader/x-fragment">
+		uniform sampler2D map;
+		uniform vec3 fogColor;
+		uniform float fogNear;
+		uniform float fogFar;
+		varying vec2 vUv;
+		void main() {
+			float depth = gl_FragCoord.z / gl_FragCoord.w;
+			float fogFactor = smoothstep( fogNear, fogFar, depth );
+			gl_FragColor = texture2D( map, vUv );
+			gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+			gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+		}
+	</script>
+ 	<script type="text/javascript" src="../js/clouds.js"></script>		
+ 	
+	</body>
+</html>
